@@ -1,0 +1,34 @@
+package com.example.appvaccine.entity;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.Date;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "tbl_log")
+public class Log {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "logID")
+    private Integer logId;
+    @Column(name = "statusLog")
+    private String statusLog;
+    @Column(name = "dateLog")
+    private Date dateLog;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "registrantionID")
+    private VaccinationRegist vaccinationRegist;
+
+    public Log() {
+    }
+
+    public Log(String statusLog, Date dateLog) {
+        this.statusLog = statusLog;
+        this.dateLog = dateLog;
+    }
+
+}
