@@ -1,11 +1,11 @@
-package com.example.appvaccine.auth;
+package com.example.appvaccine.controller;
 
-import com.example.appvaccine.entity.Role;
-import com.example.appvaccine.entity.User;
-import jdk.jfr.Registered;
+import com.example.appvaccine.dto.AuthenticationResponse;
+import com.example.appvaccine.service.AuthenticationService;
+import com.example.appvaccine.request.AuthenticationRequest;
+import com.example.appvaccine.request.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,15 +24,7 @@ public class AuthenticationController {
     }
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest user ){
-//        System.out.println("===== vaog ffaay");
-//        if(name != null){
-//            System.out.println("Data: " + name);
-//        }else {
-//            System.out.println("Ko nhan du lieu");
-//        }
         return  ResponseEntity.ok(service.authenticate(user));
-         //return ResponseEntity.ok(new AuthenticationResponse("token: qsfjri8sdf0sd2345.drdrftvtvtvgyv234556fgghj.gftujFDssdrAWS66675+++++++++++++"));
-
     }
 
 }

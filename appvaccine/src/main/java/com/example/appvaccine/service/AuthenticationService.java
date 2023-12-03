@@ -1,9 +1,12 @@
-package com.example.appvaccine.auth;
+package com.example.appvaccine.service;
 
+import com.example.appvaccine.dto.AuthenticationResponse;
 import com.example.appvaccine.dao.RolesRepository;
 import com.example.appvaccine.dao.UserRepository;
 import com.example.appvaccine.entity.Role;
 import com.example.appvaccine.entity.User;
+import com.example.appvaccine.request.AuthenticationRequest;
+import com.example.appvaccine.request.RegisterRequest;
 import com.example.appvaccine.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +14,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

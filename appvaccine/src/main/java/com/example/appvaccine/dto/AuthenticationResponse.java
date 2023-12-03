@@ -1,4 +1,4 @@
-package com.example.appvaccine.auth;
+package com.example.appvaccine.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

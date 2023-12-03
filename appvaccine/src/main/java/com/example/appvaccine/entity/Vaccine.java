@@ -33,7 +33,7 @@ public class Vaccine {
     @Column(name = "statusVaccine")
     private String statusVaccine;
     @Column(name = "imageVaccine")
-    private String imageVaccine;
+    private byte[] imageVaccine;
 
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE,
@@ -41,7 +41,7 @@ public class Vaccine {
     @JoinTable(
             name = "tbl_vaccination_registration_detail",
             joinColumns = @JoinColumn(name = "vaccineID"),
-            inverseJoinColumns = @JoinColumn(name = "registrantion")
+            inverseJoinColumns = @JoinColumn(name = "registrantionID")
     )
     private List<VaccinationRegist> vaccinationRegists;
 

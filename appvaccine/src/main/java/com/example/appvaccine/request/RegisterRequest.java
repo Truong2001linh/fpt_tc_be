@@ -1,4 +1,4 @@
-package com.example.appvaccine.auth;
+package com.example.appvaccine.request;
 
 import com.example.appvaccine.entity.Role;
 import lombok.AllArgsConstructor;
