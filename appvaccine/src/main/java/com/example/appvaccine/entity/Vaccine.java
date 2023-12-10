@@ -33,7 +33,7 @@ public class Vaccine {
     @Column(name = "statusVaccine")
     private String statusVaccine;
     @Column(name = "imageVaccine")
-    private byte[] imageVaccine;
+    private String imageVaccine;
 
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE,
