@@ -7,4 +7,6 @@ import java.util.List;
 public interface RolesService {
     List<Role> findAllRoles();
 
+    Role findRoleById(int id);
+
 }

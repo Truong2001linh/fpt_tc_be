@@ -30,11 +30,8 @@ public class AuthenticationService {
     private UserRepository userRepository;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        System.out.println("jasdhfkashd");
 
-        Role userRole = roleRepository.findRoleByRoleName(String.valueOf(request.getRole()))
-                .orElseThrow(() -> new RuntimeException("Error: Role USER is not found."));
-        System.out.println(userRole);
+        Role userRole = roleRepository.findByRoleId(1);
         User user = User.builder()
                 .phoneNumber(request.getPhoneNumber())
                 .passwordUser(passwordEncoder.encode(request.getPasswordUser()))
