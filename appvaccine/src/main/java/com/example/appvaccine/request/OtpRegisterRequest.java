@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OtpRegisterRequest {
     private String phoneNumber;
-    private Role role;
 }
