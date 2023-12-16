@@ -12,11 +12,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.io.PrintStream;
 
 @Component
 @RequiredArgsConstructor
@@ -31,7 +29,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("teat========");
+        System.out.println("1");
         final String authHeader = request.getHeader("Authorization"); // khi thực hiện gọi lệnh, chúng ta cần chuyển mã thông báo xác thực JWT trong tiêu đề
         final String jwt;
         final String userPhoneNumber;

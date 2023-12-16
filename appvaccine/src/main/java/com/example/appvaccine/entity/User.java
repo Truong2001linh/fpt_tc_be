@@ -39,10 +39,6 @@ public class User implements UserDetails {
     private List<Profile> profiles;
 
 
-    public User(String passwordUser, String phoneNumber) {
-        this.passwordUser = passwordUser;
-        this.phoneNumber = phoneNumber;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

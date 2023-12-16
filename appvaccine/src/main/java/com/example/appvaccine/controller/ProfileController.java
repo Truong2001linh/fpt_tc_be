@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProfileController {
 
-    @Autowired
     private  ProfileService profileService;
+
+    @Autowired
+    public ProfileController(ProfileService profileService) {
+        this.profileService = profileService;
+    }
 
     @PostMapping("/addProfile")
     public ProfileDTO addProfile(@RequestBody ProfileDTO profileDTO){

@@ -19,10 +19,14 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class RegisterOtpController {
 
-    @Autowired
     private SmsService smsService;
-    @Autowired
     private final AuthenticationService service;
+
+    @Autowired
+    public RegisterOtpController(SmsService smsService, AuthenticationService service) {
+        this.smsService = smsService;
+        this.service = service;
+    }
 
 
     @GetMapping("/process")

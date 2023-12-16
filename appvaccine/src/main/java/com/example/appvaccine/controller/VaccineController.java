@@ -5,7 +5,6 @@ import com.example.appvaccine.dto.VaccineDTO;
 import com.example.appvaccine.entity.Vaccine;
 import com.example.appvaccine.service.ImgurService;
 import com.example.appvaccine.service.VaccineService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +12,19 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/vaccine")
-@RequiredArgsConstructor
 public class VaccineController {
-    @Autowired
     private final ImgurService imgurService;
 
-    @Autowired
     private final VaccineService vaccineService;
+
+    @Autowired
+    public VaccineController(ImgurService imgurService, VaccineService vaccineService) {
+        this.imgurService = imgurService;
+        this.vaccineService = vaccineService;
+    }
 
     @PostMapping("/addVaccine")
     public ResponseEntity<VaccineDTO> addVaccine(
@@ -46,7 +47,7 @@ public class VaccineController {
 
 
     @GetMapping("/getAllVacine")
-    public ResponseEntity<List<VaccineDTO>> getVaccineById() throws IOException {
+    public ResponseEntity<List<VaccineDTO>> getVaccineById() {
         List<VaccineDTO> vaccineDTOs = vaccineService.getAllVacine();
         vaccineDTOs.forEach(dto -> {
             String imageUrl = ServletUriComponentsBuilder.fromCurrentContextPath()

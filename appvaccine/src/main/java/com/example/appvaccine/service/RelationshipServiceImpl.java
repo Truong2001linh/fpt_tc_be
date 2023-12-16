@@ -9,7 +9,11 @@ import java.util.List;
 
 @Service
 public class RelationshipServiceImpl implements RelationshipService {
-    private RelationshipRepository repository;
+    private final RelationshipRepository repository;
+    @Autowired
+    public RelationshipServiceImpl(RelationshipRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public RelationShip addRelationship(RelationShip relationShip) {

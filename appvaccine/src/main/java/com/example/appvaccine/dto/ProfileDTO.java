@@ -1,6 +1,5 @@
 package com.example.appvaccine.dto;
 
-import com.example.appvaccine.entity.User;
 import lombok.*;
 
 import java.util.Date;

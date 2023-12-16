@@ -3,7 +3,6 @@ package com.example.appvaccine.entity;
 import lombok.*;
 
 import jakarta.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Getter

@@ -1,12 +1,16 @@
 package com.example.appvaccine.entity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Date;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tbl_log")
 public class Log {
     @Id
@@ -22,13 +26,4 @@ public class Log {
             CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "registrantionID")
     private VaccinationRegist vaccinationRegist;
-
-    public Log() {
-    }
-
-    public Log(String statusLog, Date dateLog) {
-        this.statusLog = statusLog;
-        this.dateLog = dateLog;
-    }
-
 }

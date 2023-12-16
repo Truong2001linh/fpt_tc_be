@@ -18,16 +18,22 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-    private final PasswordEncoder passwordEncoder;
-    private final UserRepository repository;
+    private  PasswordEncoder passwordEncoder;
+    private  UserRepository repository;
 
-    private final AuthenticationManager authenticationManager;
-    @Autowired
+    private  AuthenticationManager authenticationManager;
     private JwtService jwtService;
-    @Autowired
     private RolesRepository roleRepository;
+
     @Autowired
-    private UserRepository userRepository;
+    public AuthenticationService(PasswordEncoder passwordEncoder, UserRepository repository, AuthenticationManager authenticationManager, JwtService jwtService, RolesRepository roleRepository) {
+        this.passwordEncoder = passwordEncoder;
+        this.repository = repository;
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
+        this.roleRepository = roleRepository;
+
+    }
 
     public AuthenticationResponse register(RegisterRequest request) {
 

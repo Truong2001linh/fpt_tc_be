@@ -49,11 +49,4 @@ public class Profile {
                     CascadeType.DETACH, CascadeType.REFRESH})
     private List<VaccinationRegist> vaccinationRegists;
 
-    public Profile(String fullName, Date dateOfBirth, String gender, String addressProfile, String email) {
-        this.fullName = fullName;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.addressProfile = addressProfile;
-        this.email = email;
-    }
 }

@@ -2,7 +2,6 @@ package com.example.appvaccine.controller;
 
 import com.example.appvaccine.entity.Role;
 import com.example.appvaccine.service.RolesService;
-import com.example.appvaccine.service.RolesServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RolesController {
 
-    @Autowired
     private RolesService rolesService;
 
-    public RolesController(RolesServiceImpl rolesServiceIpm1) {
-        this.rolesService = rolesServiceIpm1;
+    @Autowired
+    public RolesController(RolesService rolesService) {
+        this.rolesService = rolesService;
     }
 
     @GetMapping("/list")

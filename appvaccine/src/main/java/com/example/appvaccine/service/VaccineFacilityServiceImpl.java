@@ -1,23 +1,25 @@
 package com.example.appvaccine.service;
 
 import com.example.appvaccine.dao.VaccineFacilityRepository;
-import com.example.appvaccine.dto.VaccineDTO;
 import com.example.appvaccine.dto.VaccineFacilityDTO;
-import com.example.appvaccine.entity.Vaccine;
 import com.example.appvaccine.entity.VaccineFacility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 
 public class VaccineFacilityServiceImpl implements VaccineFacilityService {
-    @Autowired
 
-    private VaccineFacilityRepository vaccineFacilityRepository;
+    private final VaccineFacilityRepository vaccineFacilityRepository;
+
+    @Autowired
+    public VaccineFacilityServiceImpl(VaccineFacilityRepository vaccineFacilityRepository) {
+        this.vaccineFacilityRepository = vaccineFacilityRepository;
+    }
+
     @Override
     public List<VaccineFacilityDTO> getAllVaccinefacility() {
         List<VaccineFacility> vaccines = vaccineFacilityRepository.findAll();

@@ -21,10 +21,9 @@ import java.util.Set;
 @Service
 @Slf4j
 public class SmsService {
-    @Autowired
     private final TwilioConfig twilioConfig;
     Map<String, String> otpMap = new HashMap<>();
-
+    @Autowired
     public SmsService(TwilioConfig twilioConfig) {
         this.twilioConfig = twilioConfig;
     }

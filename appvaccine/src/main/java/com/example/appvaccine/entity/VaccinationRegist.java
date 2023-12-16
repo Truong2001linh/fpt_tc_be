@@ -1,5 +1,6 @@
 package com.example.appvaccine.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tbl_vaccination_registration")
 public class VaccinationRegist {
     @Id
@@ -57,10 +59,5 @@ public class VaccinationRegist {
         )
     private List<Vaccine> vaccines;
 
-
-    public VaccinationRegist(Date registrationDate, long totalPrice) {
-        this.registrationDate = registrationDate;
-        this.totalPrice = totalPrice;
-    }
 }
 

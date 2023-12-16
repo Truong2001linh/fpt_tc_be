@@ -24,9 +24,6 @@ public class RelationShip {
     public RelationShip() {
     }
 
-    public RelationShip(String relationShipName) {
-        this.relationShipName = relationShipName;
-    }
 
 
 }

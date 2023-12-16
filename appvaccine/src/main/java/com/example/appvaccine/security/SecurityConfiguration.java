@@ -1,6 +1,5 @@
 package com.example.appvaccine.security;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +20,7 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilrerChain(HttpSecurity http) throws Exception {
+        System.out.println("2");
         http
                 .csrf()
                 .disable()
@@ -35,6 +35,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/image/**").permitAll()
                 .requestMatchers("/profile/**").permitAll()
                 .requestMatchers("/vaccineFacility/**").permitAll()
+                .requestMatchers("/relationship/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

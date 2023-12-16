@@ -15,11 +15,12 @@ import java.io.IOException;
 
 @Service
 public class ImgurService {
-    private final String clientId = "b1dc1556f38ec3f"; // Thay thế với Client ID của bạn từ Imgur
     private final RestTemplate restTemplate = new RestTemplate();
 
     public String uploadImage(MultipartFile file) throws IOException {
         HttpHeaders headers = new HttpHeaders();
+        // Thay thế với Client ID của bạn từ Imgur
+        String clientId = "b1dc1556f38ec3f";
         headers.set("Authorization", "Client-ID " + clientId);
 
         ByteArrayResource byteArrayResource = new ByteArrayResource(file.getBytes()){
@@ -38,10 +39,9 @@ public class ImgurService {
         // Phân tích phản hồi để lấy URL ảnh
         JSONObject jsonResponse = new JSONObject(response.getBody());
 
-        String imageUrl = jsonResponse.getJSONObject("data").getString("link");
         // ...
 
-        return imageUrl; // Trả về URL của ảnh
+        return jsonResponse.getJSONObject("data").getString("link"); // Trả về URL của ảnh
     }
 
 }
