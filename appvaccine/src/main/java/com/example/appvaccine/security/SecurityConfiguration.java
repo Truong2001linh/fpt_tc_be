@@ -34,6 +34,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/vaccine-images/**").permitAll()
                 .requestMatchers("/image/**").permitAll()
                 .requestMatchers("/profile/**").permitAll()
+                .requestMatchers("/vaccineFacility/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

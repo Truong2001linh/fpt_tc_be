@@ -5,6 +5,7 @@ import com.example.appvaccine.dto.VaccineDTO;
 import com.example.appvaccine.entity.Vaccine;
 import com.example.appvaccine.service.ImgurService;
 import com.example.appvaccine.service.VaccineService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,17 +17,13 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping("/vaccine")
+@RequiredArgsConstructor
 public class VaccineController {
     @Autowired
     private final ImgurService imgurService;
 
     @Autowired
     private final VaccineService vaccineService;
-
-    public VaccineController(ImgurService imgurService, VaccineService vaccineService) {
-        this.imgurService = imgurService;
-        this.vaccineService = vaccineService;
-    }
 
     @PostMapping("/addVaccine")
     public ResponseEntity<VaccineDTO> addVaccine(
