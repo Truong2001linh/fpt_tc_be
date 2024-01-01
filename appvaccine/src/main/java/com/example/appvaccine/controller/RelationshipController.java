@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/relationship")
+@RequestMapping("/api/relationship")
 @RequiredArgsConstructor
 public class RelationshipController {
     @Autowired

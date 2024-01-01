@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vaccineFacility")
+@RequestMapping("/api/vaccineFacility")
 @RequiredArgsConstructor
 public class VaccineFacilityController {
     private VaccineFacilityService vaccineFacilityService;
